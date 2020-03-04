@@ -1,0 +1,19 @@
+{
+  "info": {
+    "name": "service"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  },
+  "connection": "default",
+  "collectionName": "services"
+}

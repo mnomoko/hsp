@@ -1,0 +1,24 @@
+{
+  "info": {
+    "name": "client"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "texte": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "association",
+        "collectivite",
+        "organisme"
+      ]
+    }
+  },
+  "connection": "default",
+  "collectionName": "clients"
+}

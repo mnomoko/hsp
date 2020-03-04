@@ -1,0 +1,16 @@
+{
+  "connection": "default",
+  "collectionName": "abouts",
+  "info": {
+    "name": "about"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "texte": {
+      "type": "richtext"
+    }
+  }
+}
