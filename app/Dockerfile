@@ -1,14 +1,40 @@
-# The builder from node image
-FROM node:12.2.0-alpine as builder
+FROM node:alpine AS build
 
-#RUN apk update && apk add --no-cache make git
-RUN apk --no-cache add python make g++
+# Create and set workdir
+WORKDIR /gatsby
 
-# Move our files into directory name "app"
-WORKDIR /app
-COPY package.json  /app/
-RUN npm install gatsby -g
-RUN cd /app && npm install
-COPY .  /app/
+RUN \
+  apk add --no-cache --update python curl make g++ && \
+  apk add vips-dev fftw-dev build-base --update-cache \
+    --repository https://alpine.global.ssl.fastly.net/alpine/v3.11/community \
+    --repository https://alpine.global.ssl.fastly.net/alpine/v3.11/main \
+  && rm -fR /var/cache/apk/*
 
-RUN cd /app && gatsby develop
+# Install nodejs global packages
+RUN yarn global add gatsby
+
+# Copy package.json to cache packages image layer
+COPY package.json /gatsby/
+
+# Install nodejs local packages
+RUN yarn install
+
+# Copy sourcecode files
+COPY . /gatsby/
+
+RUN chmod +x ./wait-for-strapi.sh
+
+
+# Stage 2: Web Server
+#FROM nginx:alpine
+#
+#COPY nginx /etc/nginx/
+#COPY --from=build --chown=nginx:nginx /app/public /usr/share/nginx/html
+#RUN touch /var/run/nginx.pid \
+#    && chown nginx:nginx /var/run/nginx.pid \
+#    && chown -R nginx:nginx /var/cache/nginx
+#
+#USER nginx
+#
+#EXPOSE 8080
+#HEALTHCHECK CMD [ "wget", "-q", "localhost:8080" ]

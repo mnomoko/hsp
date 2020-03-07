@@ -1,3 +1,7 @@
+let env = process.env.NODE_ENV || 'development';
+const url = process.env.GATSBY_STRAPI_URL || 'http://localhost:1337';
+require('dotenv').config({path: `./.env.${env}`});
+
 module.exports = {
   siteMetadata: {
     title: `HSP`,
@@ -16,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
+        apiURL: url,
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
           `about`,
           `client`,

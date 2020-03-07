@@ -1,14 +1,17 @@
-# The builder from node image
-FROM node:12.2.0-alpine as builder
+FROM node:alpine
 
-#RUN apk update && apk add --no-cache make git
-RUN apk --no-cache add python make g++
+RUN apk update && apk upgrade && apk add build-base gcc autoconf automake zlib-dev libpng-dev nasm bash
 
-# Move our files into directory name "app"
-WORKDIR /app
-COPY package.json  /app/
-RUN npm install gatsby -g
-RUN cd /app && npm install
-COPY .  /app/
+RUN yarn global add strapi
 
-RUN cd /app && gatsby develop
+WORKDIR /strapi
+
+COPY ./package.json /strapi/
+
+RUN yarn install
+
+COPY . /strapi/
+
+EXPOSE 1337
+
+CMD strapi develop
