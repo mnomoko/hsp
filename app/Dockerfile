@@ -11,13 +11,13 @@ RUN \
   && rm -fR /var/cache/apk/*
 
 # Install nodejs global packages
-RUN yarn global add gatsby
+RUN npm install -g gatsby
 
 # Copy package.json to cache packages image layer
 COPY package.json /gatsby/
 
 # Install nodejs local packages
-RUN yarn install
+RUN npm install
 
 # Copy sourcecode files
 COPY . /gatsby/
