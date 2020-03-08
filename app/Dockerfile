@@ -1,4 +1,4 @@
-FROM node:alpine AS build
+FROM node:12.2.0-alpine AS build
 
 # Create and set workdir
 WORKDIR /gatsby
