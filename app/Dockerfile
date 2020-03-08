@@ -7,7 +7,10 @@ RUN \
   apk add --no-cache --update python curl make g++ && \
   apk add vips-dev fftw-dev build-base --update-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/v3.11/community \
-    --repository https://alpine.global.ssl.fastly.net/alpine/v3.11/main \
+    --repository https://alpine.global.ssl.fastly.net/alpine/v3.11/main && \
+  apk add libheif --no-cache --update \
+    --repository https://alpine.global.ssl.fastly.net/alpine/edge/community \
+    --repository https://alpine.global.ssl.fastly.net/alpine/edge/main \
   && rm -fR /var/cache/apk/*
 
 # Install nodejs global packages
@@ -15,6 +18,11 @@ RUN yarn global add gatsby
 
 # Copy package.json to cache packages image layer
 COPY package.json /gatsby/
+
+# Install nodejs local packages
+RUN yarn add gatsby gatsby-image gatsby-plugin-manifest gatsby-plugin-offline \
+ gatsby-plugin-react-helmet gatsby-plugin-sharp gatsby-source-filesystem \
+ gatsby-source-strapi gatsby-transformer-sharp
 
 # Install nodejs local packages
 RUN yarn install
