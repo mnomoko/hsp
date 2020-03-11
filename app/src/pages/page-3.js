@@ -2,7 +2,7 @@ import React from "react"
 
 const Page3 = ({data}) => {
   return (
-    <section id="clients-section">
+    <section className="site-section" id="clients-section">
       <div className="container">
         <div className="row">
           <div className="col-12 text-center" data-aos="fade">
@@ -12,7 +12,7 @@ const Page3 = ({data}) => {
           <div className="row">
             <div className="col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div className="mb-4">
-                <h3 className="h3 mb-4 text-black">Collectivités</h3>
+                <h3 className="h3 mx-2 mb-4 text-black">Collectivités</h3>
               </div>
 
               <div className="mb-4">
@@ -26,7 +26,7 @@ const Page3 = ({data}) => {
 
             <div className="col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div className="mb-4">
-                <h3 className="h3 mb-4 text-black">Associations</h3>
+                <h3 className="h3 mx-2 mb-4 text-black">Associations</h3>
               </div>
 
               <div className="mb-4">
@@ -40,7 +40,7 @@ const Page3 = ({data}) => {
 
             <div className="col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div className="mb-4">
-                <h3 className="h3 mb-4 text-black">Organismes collecteurs du 1% patronal</h3>
+                <h3 className="h3 mx-2 mb-4 text-black">Organismes collecteurs du 1% patronal</h3>
               </div>
 
               <div className="mb-4">

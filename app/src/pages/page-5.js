@@ -1,7 +1,7 @@
 import React from "react"
 
 const Page5 = () => (
-  <section id="contact-section">
+  <section className="site-section" id="contact-section">
     <div className="container">
       <div className="row col-12">
         <div className="col-md-4 text-center">

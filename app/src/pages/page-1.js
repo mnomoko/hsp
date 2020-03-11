@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 const Page1 = ({ data }) => {
   console.log(data)
   return (
-  <section id="mission-section">
+  <section className="site-section" id="mission-section" data-aos="fade">
     <div className="container">
       <div className="row">
         <div className="col-12 text-center" data-aos="fade">
@@ -12,7 +12,7 @@ const Page1 = ({ data }) => {
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
+        <div className="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
           <figure className="circle-bg">
             <div className="unit-4-icon mr-4"><span className="text-primary flaticon-care"></span></div>
             <Img fluid={data.file.childImageSharp.fluid} />

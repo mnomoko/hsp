@@ -96,10 +96,11 @@ body:after {
     box-shadow: none !important; }
 
 .site-section {
-  padding: 2.5em 0; }
+  padding-top: 2.5em;
+  margin: 0 .5em;}
   @media (min-width: 768px) {
     .site-section {
-      padding: 5em 0; } }
+      padding-top: 5em; } }
   .site-section.site-section-sm {
     padding: 4em 0; }
 
@@ -383,7 +384,7 @@ body:after {
   right: 0;
   z-index: 2000;
   padding-top: 20px;
-  background: #fff;
+  background: #FF8E00;
   height: calc(100vh);
   -webkit-transform: translateX(110%);
   -ms-transform: translateX(110%);
@@ -580,14 +581,14 @@ body:after {
     font-size: 3rem;
     font-weight: 400;
     color: #fff;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
     font-weight: 900; }
     @media (max-width: 991.98px) {
       .site-blocks-cover h1 {
         font-size: 2rem; } }
   .site-blocks-cover p {
     color: #fff;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
     font-size: 1rem;
     line-height: 1.5;
     font-weight: 300; }
@@ -617,7 +618,7 @@ body:after {
     position: absolute;
     bottom: -90px;
     right: -90px;
-    background: #f8f9fa; }
+    background: transparent; }
     @media (max-width: 991.98px) {
       .circle-bg:after {
         bottom: 0px;
@@ -2038,44 +2039,3 @@ figure figcaption {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
-
-@font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?10si43');
-  src:  url('fonts/icomoon.eot?10si43#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?10si43') format('truetype'),
-  url('fonts/icomoon.woff?10si43') format('woff'),
-  url('fonts/icomoon.svg?10si43#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.img-mission {
-  width: 20%;
-  left: 35%;
-}
-
-.icon-phone:before {
-  content: "\f095";
-}
-.icon-contact_mail:before {
-  content: "\e0e1";
-}
-.icon-map-marker:before {
-  content: "\f041";
-}

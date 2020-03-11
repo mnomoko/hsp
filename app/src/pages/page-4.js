@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 const Page4 = ({data}) => {
   const about = data.strapiAbout;
   return (
-    <section id="about-section">
+    <section className="site-section" id="about-section">
       <div className="container">
         <div className="row">
           <div className="col-12 text-center" data-aos="fade">

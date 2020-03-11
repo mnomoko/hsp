@@ -2,7 +2,7 @@ import React from "react"
 import ReactMarkdown from "react-markdown";
 
 const Page2 = ({data}) => (
-  <section id="why-us-section">
+  <section className="site-section" id="why-us-section">
     <div className="container">
       <div className="row">
         <div className="col-12 text-center" data-aos="fade">
