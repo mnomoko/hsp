@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "aos": "^2.3.4",
+    "async": "^3.2.0",
     "bootstrap": "^4.4.1",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
@@ -30,6 +31,7 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
+    "npm": "^6.14.2",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -37,11 +39,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "NODE_ENV=development gatsby build",
+    "build-prod": "NODE_ENV=production gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve -H 127.0.0.1 -p 8090",
+    "serve-prod": "gatsby serve -H 188.165.6.81 -p 80",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },

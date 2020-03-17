@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql} from "gatsby"
+import {graphql, useStaticQuery} from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Page1 from "./page-1";
@@ -50,7 +50,7 @@ const IndexPage = ({data}) => {
 
 export default IndexPage
 
-export const pageQuery = graphql`
+export const pageQuery = useStaticQuery(graphql`
   {
     allStrapiMission {
       edges {
@@ -90,7 +90,7 @@ export const pageQuery = graphql`
       id
       texte
     }
-    file(relativePath: { eq: "hero_1.jpg" }) {
+    bgImg: file(relativePath: { eq: "hero_1.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300, quality: 90) {
           ...GatsbyImageSharpFluid
@@ -98,4 +98,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`);

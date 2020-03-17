@@ -1,6 +1,10 @@
 let env = process.env.NODE_ENV || 'development';
+// require('dotenv').config({path: `./.env.${env}`});
+require('dotenv').config({path: `./.env.production`});
 const url = process.env.GATSBY_STRAPI_URL || 'http://localhost:1337';
-require('dotenv').config({path: `./.env.${env}`});
+
+console.log('url : ', url);
+
 
 module.exports = {
   siteMetadata: {
